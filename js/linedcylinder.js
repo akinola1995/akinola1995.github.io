@@ -31,7 +31,6 @@ function linedCylinder(n, radius, height, color){
 
 
 function createScene() {
-    function createScene() {
  
     scene.add(linedCylinder(10,'red'));
 }
