@@ -22,8 +22,8 @@ function createCylinder(n, len, rad){
 			geom.faces.push( new THREE.Face3( i-1, i+1, i));		
 		}
 		// close cylinder
-		geom.faces.push( new THREE.Face3( 0,1,i-2));
-		geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
+		//geom.faces.push( new THREE.Face3( 0,1,i-2));
+		//geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
 
 	
 
