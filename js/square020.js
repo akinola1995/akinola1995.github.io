@@ -1,9 +1,4 @@
-/***********
- * triangle015.js
- * A square with orbit control
- * M. Laszlo
- * September 2019
- ***********/
+
 
 let camera, scene, renderer;
 let cameraControls;
