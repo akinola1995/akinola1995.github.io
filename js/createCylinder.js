@@ -5,18 +5,22 @@ var clock = new THREE.Clock();
 
 
 function createCylinder(n, len, rad){
+	        var geom = new THREE.Geometry();
 		var inc = 2.0*Math.PI/n;
+	        for (var i=2, a=inc ; i < 2*n ;i+=2, a+=inc){
+	            var cos = Math.cos(a);
+                    var sin = Math.sin(a);
+                    var tpt = new THREE.Vector3(rad * cos, len/2.0, rad * sin);
+                    geom.vertices.push(tpt);
+			
+                    var bpt = new THREE.Vector3();
+                    bpt.y = -len/2.0;
 		
-		var geom = new THREE.Geometry();
+		
 		
 		geom.vertices.push( new THREE.Vector3(0, len/2.0, rad));
 		geom.vertices.push( new THREE.Vector3(0, -len/2.0, rad));
-		for(var i=2, a=inc ; i < 2*n ;i+=2, a+=inc){
-			var tpt = new THREE.Vector3(rad*Math.sin(a), len/2.0, rad*Math.cos(a));
-			var bpt = new THREE.Vector3();
-			bpt.y = -len/2.0;
-			geom.vertices.push(tpt);
-			geom.vertices.push(bpt);
+		
 			
 			geom.faces.push( new THREE.Face3( i-2, i-1, i));
 			geom.faces.push( new THREE.Face3( i-1, i+1, i));		
@@ -37,7 +41,7 @@ function createScene() {
    
 		var mat = new THREE.MeshLambertMaterial({ color: "blue", side: THREE.DoubleSide, overdraw: true  });
 
-		geom = createCylinder(12, 6.0, 2.0);
+		var geom = createCylinder(12, 6.0, 2.0);
 		var mesh = new THREE.Mesh(geom,mat);	
 		scene.add(mesh);
 	
