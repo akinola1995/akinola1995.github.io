@@ -5,7 +5,13 @@ var clock = new THREE.Clock();
 function linedCylinder(n, radius, height, color){
     var r = 2.0;
     var inc = 2.0*Math.PI/n;
-    var mat = new THREE.LineBasicMaterial({ color: lcolor,  height: 20});
+    var mat = new THREE.
+    
+    
+    
+    
+    
+    BasicMaterial({ color: lcolor,  linewidth: 20});
 	
     var basegeom = new THREE.Geometry();
     var topgeom = new THREE.Geometry();
