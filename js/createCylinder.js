@@ -2,6 +2,8 @@
 var camera, scene, renderer;
 var cameraControls;
 var clock = new THREE.Clock();
+var whiteMat = new THREE.MeshLambertMaterial({color: new THREE.Color(1,1,1)}); 
+var myFont;
 
 function createCylinder(n, len, rad){
 		var inc = 2.0*Math.PI/n;
