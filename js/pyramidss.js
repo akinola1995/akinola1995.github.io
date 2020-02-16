@@ -15,15 +15,14 @@ function createScene() {
     var mat = new THREE.MeshLambertMaterial({color: color, side: THREE.DoubleSide});    
     var geom = createCylinder(12, 6.0, 2.0);
     var mesh = new THREE.Mesh(geom, mat);
-    var basicMat = new THREE.MeshBasicMaterial({color: 'red', wireframe: true, wireframeLinewidth: 2});
-    var pyramidWiremesh = new THREE.Mesh(geom, basicMat);
+    var axes = new THREE.AxisHelper( 20 );  
     var light = new THREE.PointLight(0xFFFFFF, 1, 1000 );
     light.position.set(0, 0, 10);
     var light2 = new THREE.PointLight(0xFFFFFF, 1, 1000);
     light2.position.set(0, -10, -10);
     var ambientLight = new THREE.AmbientLight(0x222222);
     scene.add(light, light2, ambientLight);
-    scene.add(mesh, pyramidWiremesh);
+    scene.add(mesh, axes);
 }
 
 function createCylinder(n, len, rad){
