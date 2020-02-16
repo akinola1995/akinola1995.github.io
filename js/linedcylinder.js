@@ -31,7 +31,11 @@ function linedCylinder(n, radius, height, color){
 
 
 function createScene() {
-    // triangle geometry
+    function createScene() {
+    let triangle = makeSquare();
+    let axes = new THREE.AxesHelper(10);
+    scene.add(triangle);
+    scene.add(axes);
     scene.add(linedCylinder(10,'red'));
 }
 
