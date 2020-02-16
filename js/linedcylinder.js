@@ -45,7 +45,7 @@ function animate() {
 function render() {
     var delta = clock.getDelta();
     cameraControls.update(delta);
-	renderer.render(scene, camera);
+    renderer.render(scene, camera);
 }
 
 
@@ -72,7 +72,7 @@ function init() {
 
 function showGrids() {
     // Grid step size is 1; axes meet at (0,0,0)
-	Coordinates.drawGrid({size:100,scale:1,orientation:"z"});
+    Coordinates.drawGrid({size:100,scale:1,orientation:"z"});
     Coordinates.drawAllAxes({axisLength:11, axisRadius:0.05});
 }
 
@@ -88,14 +88,14 @@ function addToDOM() {
 
 
 try {
-	init();
+    init();
     showGrids();
-	createScene();
-	addToDOM();
+    createScene();
+    addToDOM();
     render();
-	animate();
+    animate();
 
-	} catch(e) {
+} catch(e) {
     var errorMsg = "Error: " + e;
     document.getElementById("msg").innerHTML = errorMsg;
 }
