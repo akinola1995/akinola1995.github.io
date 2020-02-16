@@ -12,7 +12,7 @@ function linedCylinder(n, radius, height, color){
 	var sidegeom = new THREE.Geometry();
 	for(var i=0, a=0.0 ;i<n;i++, a+=inc){
 		var tpt = new THREE.Vector3(r*Math.sin(a), 2.0, r*Math.cos(a));
-		var bpt = tpt.clone();
+		var bpt = new THREE.Vector3();
 		bpt.y = -2.0;
 		basegeom.vertices.push(bpt);
 		topgeom.vertices.push(tpt);
