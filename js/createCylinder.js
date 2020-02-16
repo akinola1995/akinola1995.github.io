@@ -13,7 +13,7 @@ function createCylinder(n, len, rad){
 		geom.vertices.push( new THREE.Vector3(0, -len/2.0, rad));
 		for(var i=2, a=inc ; i < 2*n ;i+=2, a+=inc){
 			var tpt = new THREE.Vector3(rad*Math.sin(a), len/2.0, rad*Math.cos(a));
-			var bpt = tpt.clone();
+			var bpt = new THREE.Vector3();
 			bpt.y = -len/2.0;
 			geom.vertices.push(tpt);
 			geom.vertices.push(bpt);
@@ -25,12 +25,7 @@ function createCylinder(n, len, rad){
 		geom.faces.push( new THREE.Face3( 0,1,i-2));
 		geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
 
-		if( isCappedTop )
-			for (i = 0; i<n-2 ; i++)
-				geom.faces.push( new THREE.Face3( 0, 2*i+2, 2*i+4));		
-		if( isCappedBottom )
-			for (i = 0; i<n-2 ; i++)
-				geom.faces.push( new THREE.Face3( 2*i+5, 2*i+3, 1));		
+	
 
 		geom.computeFaceNormals();
 
