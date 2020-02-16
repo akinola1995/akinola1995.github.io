@@ -3,30 +3,30 @@ var cameraControls;
 var clock = new THREE.Clock();
 
 function linedCylinder(n, radius, height, color){
-	var r = 2.0;
-	var inc = 2.0*Math.PI/n;
+    var r = 2.0;
+    var inc = 2.0*Math.PI/n;
     var mat = new THREE.LineBasicMaterial({ color: lcolor,  height: 20});
 	
-	var basegeom = new THREE.Geometry();
-	var topgeom = new THREE.Geometry();
-	var sidegeom = new THREE.Geometry();
-	for(var i=0, a=0.0 ;i<n;i++, a+=inc){
-		var tpt = new THREE.Vector3(r*Math.sin(a), 2.0, r*Math.cos(a));
-		var bpt = new THREE.Vector3();
-		bpt.y = -2.0;
-		basegeom.vertices.push(bpt);
-		topgeom.vertices.push(tpt);
-		sidegeom.vertices.push(bpt);
-		sidegeom.vertices.push(tpt);
+    var basegeom = new THREE.Geometry();
+    var topgeom = new THREE.Geometry();
+    var sidegeom = new THREE.Geometry();
+    for(var i=0, a=0.0 ;i<n;i++, a+=inc){
+	var tpt = new THREE.Vector3(r*Math.sin(a), 2.0, r*Math.cos(a));
+	var bpt = new THREE.Vector3();
+	bpt.y = -2.0;
+	basegeom.vertices.push(bpt);
+	topgeom.vertices.push(tpt);
+	sidegeom.vertices.push(bpt);
+	sidegeom.vertices.push(tpt);
 	}
-	basegeom.vertices[n] = basegeom.vertices[0]; //to close base
-	topgeom.vertices[n] = topgeom.vertices[0]; //to close top
+    basegeom.vertices[n] = basegeom.vertices[0]; //to close base
+    topgeom.vertices[n] = topgeom.vertices[0]; //to close top
 	
     var lines = new THREE.Line(basegeom, mat, THREE.LineStrip);
-	lines.add( new THREE.Line(topgeom,mat, THREE.LineStrip));
-	lines.add( new THREE.Line(sidegeom, mat, THREE.LinePieces));
+    lines.add( new THREE.Line(topgeom,mat, THREE.LineStrip));
+    lines.add( new THREE.Line(sidegeom, mat, THREE.LinePieces));
 
-	return lines;
+    return lines;
 }
 
 
