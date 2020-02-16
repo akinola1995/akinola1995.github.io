@@ -60,16 +60,7 @@ function createCylinder(n, len, rad){
 		return geom;
 }
 
-function createText(s, vec) {
-    console.log(myFont);
-    var textProps = {size: 0.5, height: 0.1, curveSegments: 2, font: myFont};
-    var geom = new THREE.TextGeometry(s, textProps);
-    geom.computeBoundingBox();
-    geom.computeVertexNormals();
-    var mesh = new THREE.Mesh(geom, whiteMat);
-    mesh.position.copy(vec);    
-    scene.add(mesh);
-}
+
 
 
 function animate() {
