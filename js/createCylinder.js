@@ -114,16 +114,16 @@ function addToDOM() {
 }
 
 
-//try {
+try {
 	init();
-    //showGrids();
+    showGrids();
 	createScene();
 	addToDOM();
     render();
 	animate();
-/*
+
 	} catch(e) {
     var errorMsg = "Error: " + e;
     document.getElementById("msg").innerHTML = errorMsg;
 }
-*/
+
