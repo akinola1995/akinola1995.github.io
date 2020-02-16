@@ -13,8 +13,8 @@ var myFont;
 function createScene() {
     var color = new THREE.Color(0, 1, 0);
     var mat = new THREE.MeshLambertMaterial({color: color, side: THREE.DoubleSide});    
-    var geom = createPyramid(10, 4);
-    var pyramid = new THREE.Mesh(geom, mat);
+    var geom = createCylinder(12, 6.0, 2.0);
+    var mesh = new THREE.Mesh(geom, mat);
     var basicMat = new THREE.MeshBasicMaterial({color: 'red', wireframe: true, wireframeLinewidth: 2});
     var pyramidWiremesh = new THREE.Mesh(geom, basicMat);
     var light = new THREE.PointLight(0xFFFFFF, 1, 1000 );
@@ -23,7 +23,7 @@ function createScene() {
     light2.position.set(0, -10, -10);
     var ambientLight = new THREE.AmbientLight(0x222222);
     scene.add(light, light2, ambientLight);
-    scene.add(pyramid, pyramidWiremesh);
+    scene.add(mesh, pyramidWiremesh);
 }
 
 function createCylinder(n, len, rad){
