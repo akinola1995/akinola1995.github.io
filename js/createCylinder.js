@@ -1,9 +1,3 @@
-/***********
- * openPyramidText.js
- * M. Laszlo
- * February 2018
- ***********/
-
 var camera, scene, renderer;
 var cameraControls;
 var clock = new THREE.Clock();
@@ -47,12 +41,7 @@ function createCylinder(n, len, rad){
 		geom.faces.push( new THREE.Face3( 0,1,i-2));
 		geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
 
-		if( isCappedTop )
-			for (i = 0; i<n-2 ; i++)
-				geom.faces.push( new THREE.Face3( 0, 2*i+2, 2*i+4));		
-		if( isCappedBottom )
-			for (i = 0; i<n-2 ; i++)
-				geom.faces.push( new THREE.Face3( 2*i+5, 2*i+3, 1));		
+	
 
 		geom.computeFaceNormals();
 
