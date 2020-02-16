@@ -1,3 +1,5 @@
+
+
 var camera, scene, renderer;
 var cameraControls;
 var clock = new THREE.Clock();
@@ -25,28 +27,26 @@ function createCylinder(n, len, rad){
     var geom = new THREE.Geometry();
 		
 		
-	geom.vertices.push( new THREE.Vector3(0, len/2.0, rad));
-	geom.vertices.push( new THREE.Vector3(0, -len/2.0, rad));
-	for(var i=2, a=inc ; i < 2*n ;i+=2, a+=inc){
-	        var tpt = new THREE.Vector3(rad*Math.sin(a), len/2.0, rad*Math.cos(a));
-		var bpt = new THREE.Vector3();
-		bpt.y = -len/2.0;
-		geom.vertices.push(tpt);
-		geom.vertices.push(bpt);
+    geom.vertices.push( new THREE.Vector3(0, len/2.0, rad));
+    geom.vertices.push( new THREE.Vector3(0, -len/2.0, rad));
+    for(var i=2, a=inc ; i < 2*n ;i+=2, a+=inc){
+	var tpt = new THREE.Vector3(rad*Math.sin(a), len/2.0, rad*Math.cos(a));
+        var bpt = new THREE.Vector3();
+        bpt.y = -len/2.0;
+	geom.vertices.push(tpt);
+	geom.vertices.push(bpt);
 			
-		geom.faces.push( new THREE.Face3( i-2, i-1, i));
-		geom.faces.push( new THREE.Face3( i-1, i+1, i));		
+	geom.faces.push( new THREE.Face3( i-2, i-1, i));
+	geom.faces.push( new THREE.Face3( i-1, i+1, i));		
 	}
 		// close cylinder
-		geom.faces.push( new THREE.Face3( 0,1,i-2));
-		geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
+   geom.faces.push( new THREE.Face3( 0,1,i-2));
+   geom.faces.push( new THREE.Face3( 1,i-2,i-1));		
 
-	
-
-		geom.computeFaceNormals();
+   geom.computeFaceNormals();
 
 
-		return geom;
+   return geom;
 }
 
 
