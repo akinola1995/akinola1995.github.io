@@ -87,9 +87,9 @@ function addToDOM() {
 }
 
 
-//try {
+try {
 	init();
-    //showGrids();
+    showGrids();
 	createScene();
 	addToDOM();
     render();
