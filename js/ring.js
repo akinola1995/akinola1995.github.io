@@ -1,5 +1,5 @@
 
-
+//a program that generates a ring of solids rotated at equal intervals around the y-axis and that lie (roughly) in the xz-plan
 
 
 let camera, scene, renderer;
@@ -7,14 +7,7 @@ let cameraControls;
 let clock = new THREE.Clock();
 
 //options parameters for the ring.
-var ringObject = {
-    nbrSolids: 10,
-    opacity: 0.8,
-    scaleX: 1,
-    scaleY: 1,
-    scaleZ: 1,
-    type: "All",
-    rainbow: false,
+var ringObject = {nbrSolids: 10, opacity: 0.8, scaleX: 1, scaleY: 1, scaleZ: 1, type: "All", rainbow: false,
 
     //function that averages out the x, y and z scale and then updates the scene.
     averageScale: function () {
@@ -45,8 +38,8 @@ function createScene() {
     }
     //create new objects after gui has been updated.
 
-    let thing = createRingF(makeSolidsFnc(), ringObject.nbrSolids, 12, ringObject.opacity, ringObject.scaleX, ringObject.scaleY, ringObject.scaleZ, ringObject.type, ringObject.rainbow);
-    scene.add(thing);
+    let root = createRingF(makeSolidsFnc(), ringObject.nbrSolids, 12, ringObject.opacity, ringObject.scaleX, ringObject.scaleY, ringObject.scaleZ, ringObject.type, ringObject.rainbow);
+    scene.add(root);
     let light = new THREE.PointLight(0xffffff, 1, 100);
     light.position.set(0, 50, 0);
     scene.add(light);
