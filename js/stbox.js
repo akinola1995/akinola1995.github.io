@@ -1,4 +1,7 @@
-let camera, scene, renderer;// renderOnDemand = true, renderRequested = false;
+
+
+
+let camera, scene, renderer;
 let cameraControls;
 let clock = new THREE.Clock();
 
