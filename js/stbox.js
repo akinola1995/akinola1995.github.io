@@ -31,8 +31,8 @@ function createScene() {
         scene.remove(scene.children[0]);
     }
     //create new objects after gui has been updated.
-    let thing = createBox(makeStarburstFnc(), starBox.stars, starBox.depth, starBox.width, starBox.height);
-    scene.add(thing);
+    let root = createBox(makeStarburstFnc(), starBox.stars, starBox.depth, starBox.width, starBox.height);
+    scene.add(root);
 }
 
 
