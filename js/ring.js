@@ -9,7 +9,7 @@ let clock = new THREE.Clock();
 //controls/parameters for the ring.
 var ringObject = {nbrSolids: 12, opacity: 0.2, scaleX: 1, scaleY: 1, scaleZ: 1, type: "All", rainbow: false,
 
-    //function that averages out the x, y and z scale and then updates the scene.
+    //this function finds the average of x,y,z and add to the scene.
     averageScale: function () {
         let a = (this.scaleX + this.scaleY + this.scaleZ) / 3;
         this.scaleX = a;
@@ -21,7 +21,7 @@ var ringObject = {nbrSolids: 12, opacity: 0.2, scaleX: 1, scaleY: 1, scaleZ: 1, 
 
 //GUI Interface.
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(ringObject, 'nbrSolids', 5, 50).listen().onChange(function (value) { createScene(); });
+gui.add(ringObject, 'nbrSolids', 5, 45).listen().onChange(function (value) { createScene(); });
 gui.add(ringObject, 'opacity', 0.0, 1.0).listen().onChange(function (value) { createScene(); });
 gui.add(ringObject, 'scaleX', 1, 10).listen().onChange(function (value) { createScene(); });
 gui.add(ringObject, 'scaleY', 1, 10).listen().onChange(function (value) { createScene(); });
