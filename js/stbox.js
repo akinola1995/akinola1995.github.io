@@ -1,18 +1,14 @@
 
 
+//A function that populates the surface of a box with starburst.
+
 
 let camera, scene, renderer;
 let cameraControls;
 let clock = new THREE.Clock();
 
 //parameter object 
-var starBox = {
-    stars: 60,
-    depth: 8,
-    width: 7,
-    height: 9,
-
-};
+var starBox = {stars: 60, depth: 8, width: 7, height: 9,};
 
 //code for creating the GUI.
 const gui = new dat.GUI({ autoPlace: true });
