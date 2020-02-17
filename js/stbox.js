@@ -8,14 +8,14 @@ let cameraControls;
 let clock = new THREE.Clock();
 
 //parameter object 
-var starBox = {stars: 60, depth: 8, width: 7, height: 9,};
+var starBox = {stars: 60, depth: 10, width: 10, height: 10,};
 
 //code for creating the GUI.
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(starBox, 'stars', 12, 250).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'depth', 3, 80).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'width', 3, 100).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'height', 3, 120).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'stars', 10, 250).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'depth', 4, 80).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'width', 4, 100).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'height', 4, 120).listen().onChange(function (value) { createScene(); });
 
 
 
@@ -26,8 +26,8 @@ function createScene() {
     while (scene.children.length > 0) {
         scene.remove(scene.children[0]);
     }
-    //create new objects after gui has been updated.
-    let root = createBox(makeStarburstFnc(), starBox.stars, starBox.depth, starBox.width, starBox.height);
+    //create new objects after update.
+    let root = createBox(createStarburstFnc(), starBox.stars, starBox.depth, starBox.width, starBox.height);
     scene.add(root);
 }
 
@@ -43,7 +43,7 @@ function createBox(fnc, n, depth, width, height) {
     return root;
 }
 
-function makeStarburstFnc(maxRays, maxRad) {
+function createStarburstFnc(maxRays, maxRad) {
     function fnc() {
         return starburst(maxRays, maxRad);
     }
