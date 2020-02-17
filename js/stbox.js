@@ -7,9 +7,9 @@ let clock = new THREE.Clock();
 
 //parameter object 
 var starBox = {
-    stars: 50,
-    depth: 9,
-    width: 9,
+    stars: 60,
+    depth: 8,
+    width: 7,
     height: 9,
 
 };
