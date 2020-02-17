@@ -12,10 +12,10 @@ var starBox = {stars: 60, depth: 8, width: 7, height: 9,};
 
 //code for creating the GUI.
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(starBox, 'stars', 15, 250).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'depth', 8, 80).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'width', 10, 100).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'height', 8, 120).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'stars', 12, 250).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'depth', 3, 80).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'width', 3, 100).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'height', 3, 120).listen().onChange(function (value) { createScene(); });
 
 
 
