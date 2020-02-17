@@ -16,14 +16,14 @@ var starBox = {
 
 //code for creating the GUI.
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(starBox, 'stars', 10, 200).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'depth', 5, 100).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'stars', 10, 250).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'depth', 5, 80).listen().onChange(function (value) { createScene(); });
 gui.add(starBox, 'width', 5, 100).listen().onChange(function (value) { createScene(); });
-gui.add(starBox, 'height', 5, 100).listen().onChange(function (value) { createScene(); });
+gui.add(starBox, 'height', 5, 120).listen().onChange(function (value) { createScene(); });
 
 
 
-//creating the scene with parameters from the GUI.
+//Creating the scene using the GUI parameter.
 function createScene() {
 
     //clear objects on update.
@@ -54,7 +54,7 @@ function makeStarburstFnc(maxRays, maxRad) {
     return fnc;
 }
 
-//get random point on the surface of a 3 dimensional box.
+//get random point on the surface of a 3D box.
 function getRandomPointBox(depth, width, height) {
     let r = Math.random() * 6; //determine face.
     if (r < 1) { //top
