@@ -1,5 +1,5 @@
 /***********
- * This produces a sphere of platonic solids with a GUI to adjust them.
+ * This program places a number of Platonic solids at random points.
  * Submitted by Akinola Ayoola Olotu
  * Computer Graphics ass3. Prob 1
  ***********/
@@ -8,21 +8,16 @@ let camera, scene, renderer;
 let cameraControls;
 let clock = new THREE.Clock();
 
-//options parameters for the ring.
-var sphereObject = {
-    nbrSolids: 30,
-    opacity: 0.8,
-    scale: 1,
-    rad: 12,
-    type: "Random"
+//options parameters for the platonic solids.
+var sphereObject = {nbrSolids: 38, opacity: 0.1, scale: 1, rad: 10, type: "Random"
 };
 
 
-//code for the GUI.
+//adding the GUI.
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(sphereObject, 'nbrSolids', 5, 50).listen().onChange(function (value) { createScene(); });
-gui.add(sphereObject, 'rad', 4, 30).listen().onChange(function (value) { createScene(); });
-gui.add(sphereObject, 'opacity', 0.2, 1.0).listen().onChange(function (value) { createScene(); });
+gui.add(sphereObject, 'nbrSolids', 2, 45).listen().onChange(function (value) { createScene(); });
+gui.add(sphereObject, 'rad', 2, 35).listen().onChange(function (value) { createScene(); });
+gui.add(sphereObject, 'opacity', 0, 1.0).listen().onChange(function (value) { createScene(); });
 gui.add(sphereObject, 'scale', .5, 10).listen().onChange(function (value) { createScene(); });
 gui.add(sphereObject, 'type', ['Random', 'Tetrahedron', 'Octahedron', 'Icosahedron', 'Dodecahedron']).listen().onChange(function (value) { createScene(); });
 
@@ -30,12 +25,11 @@ gui.add(sphereObject, 'type', ['Random', 'Tetrahedron', 'Octahedron', 'Icosahedr
 
 function createScene() {
 
-    let nbrSolids = 30;
-    let opacity = 0.8;
+    let nbrSolids = 38;
+    let opacity = 0.1;
     let scale = 1;
-    //let type = "Icosahedron";
     let type = "Random";
-    let rad = 12
+    let rad = 10
 
     //clear objects on update.
     while (scene.children.length > 0) {
