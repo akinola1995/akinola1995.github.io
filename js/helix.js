@@ -27,8 +27,8 @@ function createScene() {
     while (scene.children.length > 0) {
         scene.remove(scene.children[0]);
     }
-    //create new objects after gui has been updated.
-    //determine color.
+    
+    //chose color.
     let c = new THREE.Color();
     if (helixObject.color == "Pink")
         c = new THREE.Color(1, .2, .8);
@@ -45,7 +45,7 @@ function createScene() {
     else
         c = new THREE.Color(.01, .01, .01);
 
-    //determine geometry.
+    //chose geometry.
     let geom = new THREE.Geometry();
     if (helixObject.type == "Sphere")
         geom = new THREE.SphereGeometry(1);
