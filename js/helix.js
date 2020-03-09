@@ -10,22 +10,16 @@ let cameraControls;
 let clock = new THREE.Clock();
 
 
-var helixObject = {
-    color: "Pink",
-    type: "Icosahedron",
-    radius: 2,
-    nbrSolids: 49,
-    angle: Math.PI / 4,
-    distance: 0.5
+var helixObject = {color: "Green",type: "Tetrahedron", radius: 2, nbrSolids: 50, angle: Math.PI / 4, distance: 0.5
 };
 
 const gui = new dat.GUI({ autoPlace: true });
-gui.add(helixObject, 'nbrSolids', 5, 200).listen().onChange(function (value) { createScene(); });
+gui.add(helixObject, 'nbrSolids', 4, 150).listen().onChange(function (value) { createScene(); });
 gui.add(helixObject, 'angle', Math.PI / 8, Math.PI).listen().onChange(function (value) { createScene(); });
 gui.add(helixObject, 'distance', 0.2, 2).listen().onChange(function (value) { createScene(); });
 gui.add(helixObject, 'radius', 1, 10).listen().onChange(function (value) { createScene(); });
 gui.add(helixObject, 'type', ['Sphere', 'Tetrahedron', 'Octahedron', 'Icosahedron', 'Dodecahedron']).listen().onChange(function (value) { createScene(); });
-gui.add(helixObject, 'color', ['Pink', 'Blue', 'Red', 'Purple', 'Green', 'White', 'Black']).listen().onChange(function (value) { createScene(); });
+gui.add(helixObject, 'color', ['Green', 'Blue', 'Red', 'Purple', 'Pink', 'White', 'Black']).listen().onChange(function (value) { createScene(); });
 
 
 function createScene() {
