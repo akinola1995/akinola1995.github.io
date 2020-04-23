@@ -1,3 +1,7 @@
+
+
+
+
 //* Initialize webGL with camera and lights
 const canvas1 = document.getElementById("mycanvas");
 
