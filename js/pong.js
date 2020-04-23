@@ -1,3 +1,6 @@
+
+
+
 // --- start point ---
 function initialize() {
     setupCamera();
