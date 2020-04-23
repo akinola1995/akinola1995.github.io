@@ -1,8 +1,8 @@
 /*
 Trabalho Realizado por :
-Pedro Gusmão 77867
+Pedro GusmÃ£o 77867
 Francisco Lopes 76406
-Referências:
+ReferÃªncias:
 1 - https://codepen.io/Xanmia/pen/otAgz
 2 - https://appdevelopermagazine.com/538/2013/7/27/create-a-3d-pong-game-with-three.js-and-webgl/
 3 - http://nokarma.org/2011/02/27/javascript-game-development-keyboard-input/index.html
