@@ -34,7 +34,7 @@
     <table id="screen">
         <tr>
             <td height="126" colspan="2">
-                <!--Bot�o Chamar Empregado-->
+                <!--Botão Chamar Empregado-->
                 <div class="box btn" id="callbtn">
                       &emsp; &emsp;&emsp;Chamar Empregado
                 </div>
@@ -51,7 +51,7 @@
             </td>
 
             <td width="258" height="126">
-                <!--Rel�gio-->
+                <!--Relógio-->
                 <span class="box" id="clock">
                 </span>
             </td>
@@ -59,20 +59,1138 @@
 
         <tr>
             <td width="400" height="60%" valign="top">
-                <!--Menu Pingpong-->
+                <!--Menu Jogos-->
                 <div id="box-games">
                     <div class="title" id="game">
                         JOGOS
-                    
+                    </div>
+                    <div class="box btn games" id="games-tic-tac-toe-btn">
+                        Jogo do Galo
+                    </div>
+                    <div class="box btn games" id="games-esmurristo-btn">
+                        Esmurre ISTo
                     </div>
                     <div class="box btn games" id="games-pong-btn">
                         Pong
                     </div>
                 </div>
 
-               
+                <!--Menu Música-->
+                <div class="title" id="music">
+                    M&Uacute;SICA AMBIENTE
+                </div>
+                <div class="box background" id="boxmusic" >
+                    <div id="cover" ></div>
+                    <div id="cover-text" >
+                      A tocar: <span id="playing-song-name">I'm Blue</span><br />
+                      de: <span id="playing-artist-name">Eiffel 65</span>
+                    </div>
 
- 
+                    <div class="progress">
+                      <div id="progress-bar"> </div>
+                    </div>
+                    <div class="musicTimeLeft">-3:07</div>
+                </div>
+                <!--Botão Votar Próxima Música-->
+                <div class="box btn slideup" id="votemusic" >
+                    Votar Na Próxima Música
+                </div>
+            </td>
+
+            <td width="628" height="60%" align="center" valign="top">
+                <!--Botão Fazer Pedido-->
+                <div class="btn" id="orderfoodbtn">
+                    <br />Fazer <br />Pedido
+                </div>
+            </td>
+
+            <td height="60%" valign="top">
+                <div id="box-conta-utilizador-all">
+                    <!--Menu Conta de Utilizador-->
+                    <div class="title" id="rightBoxTitle" >
+                        CONTA DE UTILIZADOR
+                    </div>
+                    <div class="box boxright background" id="boxcontautilizador" >
+                        <br />
+                        <!--Botão Entrar-->
+                        <div class="box btn" id="login-btn">
+                            &emsp;ENTRAR
+                        </div>
+                        <br /><br /><br /><br /><br /><br />
+                        <!--Botão Registar-->
+                        <div class="box btn" id="reg-btn">
+                            &emsp;&emsp;REGISTAR
+                        </div>
+                    </div>
+                    <!--Caixa Login quando o utilizador entrou na conta-->
+                    <div class="box boxright background" id="boxcontautilizadorlogged">
+                        <div id="textContaUtilizador">
+                            Seja bem-vindo, <span class="logged-uname"></span>!<br/>
+                        </div>
+                        <div class="box btn" id="historicobtn">
+                            Histórico
+                        </div>
+                        <div class="box btn" id="definicoesContabtn">
+                            Definições de Conta
+                        </div>
+                        <div class="box btn" id="sairSessaobtn">
+                            Terminar Sessão
+                        </div>
+                    </div>
+                    <!--Histórico-->
+                    <div id="Historico">
+                        <div class="box boxright background" id="boxHistorico">
+                              <ul>
+                              </ul>
+                            <div class="box btn" id="boxHistoricoVoltarbtn">
+                                Voltar
+                            </div>
+                        </div>
+                        <div class="box boxright background boxHistoricoRepetirPedido" id="boxHistoricoRepetirPedido">
+                          <span style="font-size: 4; font-weight: bold; text-decoration: underline" class="hist-info">Pedido 1 - 12/04/2017 - 19:38</span><br />
+                          <span style="font-size: 4" class="hist-total">Total: 13,25€</span><br /><br />
+                          <span class="hist-order">
+                              1x Caldo Verde<br />
+                              1x Cerveja Coral<br />
+                              1x Bitoque<br />
+                              1x Serradura
+                          </span>
+                          <div class="box btn boxRepetirPedidobtn" id="boxRepetirPedidobtn">
+                              &emsp;Repetir Pedido
+                          </div>
+                          <div class="box btn boxHistoricoRepetirPedidoVoltarbtn" id="boxHistoricoRepetirPedidoVoltarbtn">
+                              Voltar
+                          </div>
+                        </div>
+                    </div>
+                    <!--Definicoes de Conta-->
+                    <div id="DefinicoesConta">
+                        <div class="box boxright background" id="boxDefContas">
+                            <form id="def-form">
+                                <div class="form" style="position:absolute; top:10px; left:15px;">
+
+                                    <table>
+                                        <!--Nome de Utilizador-->
+                                        <tr>
+                                            <td>
+                                                <label for="def-uname-txtbx">Nome de Utilizador:
+                                                    <span id="def-uname-exists" class="attentionText">J&aacute; existe!</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="inputDef req-field" name="def-uname" id="def-uname-txtbx"><br />
+                                            </td>
+                                        </tr>
+
+                                        <!--Password-->
+                                        <tr>
+                                            <td>
+                                                <label for="def-pword-txtbx">Palavra-Passe:</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="password" class="inputDef" name="def-pword" id="def-pword-txtbx"><br />
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                <label for="def-cpword-txtbx">Confirmar Palavra-Passe:
+                                                    <span id="def-cpword-diff" class="attentionText">Diferente!</span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="password" class="inputDef" name="def-cpword" id="def-cpword-txtbx"><br />
+                                            </td>
+                                        </tr>
+
+                                        <!--NIF-->
+                                        <tr>
+                                            <td>
+                                                <label for="def-nif-numbx">Número de Contribuinte (NIF):</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="inputDef numOnly nifNumber" name="def-nif" id="def-nif-numbx" maxlength="9"><br>
+                                            </td>
+                                        </tr>
+
+                                        <!--Nr Telemóvel-->
+                                        <tr>
+                                            <td>
+                                                <label for="def-tel-numbx">Número de Telemóvel:</label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" class="inputDef numOnly cellNumber" name="def-tel" id="def-tel-numbx" maxlength="9"><br>
+                                            </td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+
+                                <div class="box btn" id="boxDefinicoesVoltarbtn">
+                                    Voltar
+                                </div>
+                                <div class="box btn" id="boxDefinicoesGuardarbtn">
+                                    Guardar
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <!--Blocker, div preta com opacidade-->
+    <div id="blocker"></div>
+
+    <!--Loader, div branca mostrada enquanto a página está a carregar-->
+    <div id="loader"></div>
+
+    <!--Janela Help-->
+    <div class="window" id="help-window">
+        <h3>AJUDA</h3>
+        <div class="closeWindow btn Xbtn" id="help-window-close-btn"></div>
+        <div id="text-help">
+          Em qual das seguintes secções precisa de ajuda?
+        </div>
+        <div class="box btn help-btn" id="help-window-pedidobtn">
+            Pedido
+        </div>
+        <div class="box btn help-btn" id="help-window-contabtn">
+            Conta Utilizador
+        </div>
+        <div class="box btn help-btn" id="help-window-jogosbtn">
+            Jogos
+        </div>
+        <div class="box btn help-btn" id="help-window-musicabtn">
+            Música Ambiente
+        </div>
+
+        <div class="background helpdiv" id="help-div-pedido">
+            <h4>Pedido</h4>
+            <b><u>Para que serve?</u></b> <br />
+            O botão <b>Fazer Pedido</b> leva-o a um menu para efectuar o pedido. Se já tiver um
+            prato na mesa poderá clicar, à esquerda do ecrã, em <b>Fazer Novo Pedido</b>.<br /><br />
+            <b><u>Como Usar?</u></b><br />
+            À esquerda encontra as várias <b>classes de consumíveis</b>, clique nestas param
+            aparecerem os seus items. Ao clicar num item, ele é adicionado à <b>lista à direita</b>,
+            onde pode <b>aumentar a quantidade</b> usando as setas, eliminar ou <b>editar os ingredientes</b>.
+            Em baixo desta lista poderá clicar em <b>Confirmar</b> para efectuar o
+            pedido.
+
+            <div class="box btn back">
+                VOLTAR
+            </div>
+        </div>
+
+        <div class="background helpdiv" id="help-div-conta">
+            <h4>Conta Utilizador</h4>
+            <b><u>Para que serve?</u></b> <br />
+            No menu de <b>Conta Utilizador</b> pode <b>registar</b>-se ou entrar no sistema.
+            Ao ter uma conta poderá guardar o <b>histórico</b> de pedidos, podendo fazer pedidos
+            rápidos, <b>guardar informações</b> como o NIF, tendo este
+            à disposição para usar numa compra.<br /><br />
+            <b><u>Como Usar?</u></b><br />
+            Em <b>ENTRAR</b> pode aceder à sua conta e em <b>REGISTAR</b> pode efectuar o registo.
+            Ao ter entrado poderá aceder ao <b>Histórico</b>, e ao clicar em <b>Repetir Pedido</b>,
+            será redireccionado para o menu do pedido (correspondente à data especificada) com
+            os items prontos. Em <b>Definições de Conta</b> poderá editar as suas informações.
+
+            <div class="box btn back">
+                VOLTAR
+            </div>
+        </div>
+
+        <div class="background helpdiv" id="help-div-jogos">
+            <h4>Jogos</h4>
+            <b><u>Como Usar?</u></b> <br />
+            Poderá escolher entre 3 jogos. Jogo do Galo, EsmurrISTo e Pong.
+            Para iniciar cada jogo, deverá clicar em  <b>Jogar</b>
+            Após ter jogado, clique em <b>Jogar novamente</b> para uma nova partida.
+            Para começar de novo, o jogo atual, clique em <b>Reset</b>.<br /><br />
+            <b><u>Jogo do Galo</u></b> <br />
+            O primeiro jogador a fazer uma linha com ícones iguais ganha.<br />
+            <b><u>EsmurrISTo</u></b> <br />
+            Jogo contra o tempo, o objectivo será fazer o maior numero de toques
+            em 5 segundos. O jogo começa após a contagem. <br />
+            <b><u>Pong</u></b> <br />
+            Se a bola passar pelo adversário, você ganha 1 ponto, se a bola passar por si, o ponto vai para o adversário.
+             Aos 5 pontos o jogo acaba.
+
+            <div class="box btn back">
+                VOLTAR
+            </div>
+        </div>
+
+        <div class="background helpdiv" id="help-div-musica">
+            <h4>Música Ambiente</h4>
+            <b><u>Para que Serve?</u></b> <br />
+            Na secção da música ambiente poderá ver o nome da música que está a passar
+            e poderá <b>votar na música</b> que deseja ouvir a seguir, carregando no <b>botão em baixo</b>.
+            Ao escolher uma música, automaticamente vota nela.
+
+            <div class="box btn back">
+                VOLTAR
+            </div>
+        </div>
+    </div>
+
+    <!--Janela Login-->
+    <div class="window" id="login-window">
+        <h3>ENTRAR</h3>
+        <div class="closeWindow btn Xbtn" id="login-close-btn"></div>
+
+        <form id="login-form">
+            <div class="form">
+
+                <table>
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="login-uname-txtbx">Nome de Utilizador:<span id="login-uname-att" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="req-field" name="login-uname" id="login-uname-txtbx">
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="login-pword-txtbx">Palavra-Passe:<span id="login-pword-att" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" class="req-field" name="login-pword" id="login-pword-txtbx"><br></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <a style="text-align: right" href="#" id="forgot-password-btn">Esqueceu palavra-passe/nome de utilizador.</a>
+                            <br />
+                            <br />
+                            <span class="attentionText att-warning">* Campos de preenchimento obrigat&oacute;rio.</span>
+                        </td>
+                    </tr>
+                </table>
+                <p id="invalid-data">Palavra-passe ou Nome de Utilizador inv&aacute;lidos</p>
+
+            </div>
+
+            <div class="box btn submit" id="login-submit">
+                ENTRAR
+                <div class="disabler" id="login-submit-disabler"></div>
+            </div>
+        </form>
+    </div>
+
+    <!--Janela Registar-->
+    <div class="window" id="reg-window">
+        <h3>REGISTAR</h3>
+        <div class="closeWindow btn Xbtn" id="reg-close-btn"></div>
+
+        <form id="reg-form">
+            <div class="form" style="position:absolute; top:110px;">
+
+                <table>
+                    <!--Nome de Utilizador-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-uname-txtbx">Nome de Utilizador:<span id="reg-uname-att" class="attentionText">*</span>
+                                <span id="reg-uname-exists" class="attentionText">O nome de utilizador escolhido j&aacute; existe.</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text"  class="inputReg req-field" name="reg-uname" id="reg-uname-txtbx"><br>
+                        </td>
+                    </tr>
+                    <!--Password-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-pword-txtbx">Palavra-Passe:<span id="reg-pword-att" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password"  class="req-field" name="reg-pword" id="reg-pword-txtbx"><br />
+                        </td>
+                    </tr>
+                    <!--Confirmar Password-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-cpword-txtbx">Confirmar Palavra-Passe:<span id="reg-cpword-att" class="attentionText">*</span>
+                                <span id="reg-cpword-diff" class="attentionText">A palavra-passe inserida &eacute; diferente &agrave; anterior.</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password"  class="req-field" name="reg-cpword" id="reg-cpword-txtbx"><br />
+                        </td>
+                    </tr>
+                    <!--NIF-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-nif-numbx">N&uacute;mero de Contribuinte (NIF):</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="numOnly nifNumber" name="reg-nif" id="reg-nif-numbx" maxlength="9"><br>
+                        </td>
+                    </tr>
+                    <!--Nr Telemóvel-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-tel-numbx">N&uacute;mero de Telem&oacute;vel:<span id="reg-tel-att" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="req-field numOnly cellNumber" name="reg-tel" id="reg-tel-numbx" maxlength="9"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                            <span class="attentionText att-warning">* Campos de preenchimento obrigat&oacute;rio.</span>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="box btn submit" id="reg-submit">
+                CONFIRMAR
+                <div class="disabler" id="reg-submit-disabler"></div>
+            </div>
+        </form>
+
+    </div>
+
+    <!--Janela confirmação Sim ou Não-->
+    <div class="window confirm" id="confirmYesNo">
+        <span class="confirmText"></span>
+        <div class="box btn confirmYesbtn" id="confirmYesbtn">
+            Sim
+        </div>
+        <div class="box btn confirmNobtn" id="confirmNobtn">
+            Não
+        </div>
+    </div>
+
+    <!--Janela confirmação Ok-->
+    <div class="window confirm" id="confirmOk">
+        <span class="confirmText"></span>
+        <div class="box btn confirmOkbtn" id="confirmOkbtn">
+            Ok
+        </div>
+    </div>
+
+    <div class="window confirm" id="recover-password-box">
+        <form id="recover-form">
+            Insira o seu número de telemóvel.
+            <br />
+            <span class="confirmText"></span>
+            <input type="text" class="numOnly req-field cellNumber" name="recover-tel" id="recover-tel-numbx" maxlength="9">
+            <div class="box btn confirmOk2btn" id="recover-confirmYesbtn">
+                Ok
+                <div class="disabler" id="reg-submit-disabler"></div>
+            </div>
+            <div class="box btn confirmNobtn" id="recover-confirmNobtn">
+                Cancelar
+            </div>
+        </form>
+    </div>
+
+    <!--######################################################################
+    ############################ Segunda Janela ##############################
+    ##########################################################################-->
+    <div id="second-screen">
+        <div class="title" id="contautilizadorSecondScreen" >
+            CONTA DE UTILIZADOR
+        </div>
+
+        <div class="box background" id="screen2-login-box">
+            <div class="box btn" id="screen2-login-btn">
+                &emsp;Entrar
+            </div>
+            <div class="box btn" id="screen2-reg-btn">
+                &emsp;Registar
+            </div>
+        </div>
+        <div class="box background" id="screen2-logged-box">
+            <div id="textContaUtilizador" style="text-align:left; position:absolute; top:5px; left:5px;">
+                Seja bem-vindo, <span class="logged-uname"></span>!<br/>
+            </div>
+
+            <div class="box btn" id="screen2-historicobtn"></div>
+            <div class="box btn" id="screen2-definicoesContabtn"></div>
+            <div class="box btn" id="screen2-sairSessaobtn"></div>
+        </div>
+
+
+        <div class="box" id="boxEmenta">
+            <div class="box btn menuEmenta" id="menu-entradas">
+                &ensp;&ensp;Entradas
+            </div>
+            <div class="box btn menuEmenta" id="menu-sopas">
+                &ensp;&ensp;Sopas
+            </div>
+            <div class="box btn menuEmenta" id="menu-pratos">
+                &ensp;&ensp;Pratos
+            </div>
+            <div class="box btn menuEmenta" id="menu-bebidas">
+                &ensp;&ensp;Bebidas
+            </div>
+            <div class="box btn menuEmenta" id="menu-sobremesas">
+                &ensp;&ensp;Sobremesas
+            </div>
+            <div class="box btn menuEmenta" id="menu-cafetaria">
+                &ensp;&ensp;Cafetaria
+            </div>
+
+            <div id="textOrdenacao">
+                Ordenar por:&nbsp;&nbsp;
+                <span id="ord-price">Preço</span>,
+                <span id="ord-classif">Classificação</span>,
+                <span id="ord-ctime">Tempo de Confeção</span>,
+                <span id="ord-alfa">Alfabética</span>.
+            </div>
+
+            <ul id="food-options">
+                <!--
+                <li class="box opcao" id="food-option-box-1">
+                    <div class="titulo">
+                        Bitoque
+                    </div>
+                    <div class="descricao">
+                        Batata frita com arroz acompanhada com carne de porco.
+                    </div>
+                    <div class="preco">
+                        6,00€
+                    </div>
+                    <div class="box btn info">
+                        + informações
+                    </div>
+                </li>
+                -->
+            </ul>
+        </div>
+
+        <div class="box background" id="boxCompras">
+            <ul>
+            </ul>
+
+            <div class="box" id="totalBox">
+                Total:
+                <span></span>
+            </div>
+        </div>
+
+        <div class="box btn" id="menuPrincipalbtn">
+            MENU PRINCIPAL
+        </div>
+
+        <div class="box btn confirmarbtn" id="Confirmarbtn">
+            &nbsp;&nbsp;&nbsp;&nbsp;CONFIRMAR
+            <div class="disabler"></div>
+        </div>
+
+        <div id="screen2-historico">
+            <div class="title" id="historicoSecondScreen" >
+                HISTÓRICO
+            </div>
+            <div class="box background" id="screen2-boxHistorico">
+                <ul>
+                    <li>
+                        <div class="box btn boxHistoricoPedidobtn">
+                            12/04/2017  19:38 <br/>
+                            Pedido 1
+                        </div>
+                        <div class="box btn boxHistoricoRepetirPedidobtn">
+                            Repetir Pedido
+                        </div>
+                        <div class="box btn boxHistoricoXbtn Xbtn">
+                            X
+                        </div>
+                    </li>
+                </ul>
+                <div class="box btn" id="screen2-boxHistoricoFecharbtn">
+                    Fechar
+                </div>
+            </div>
+            <div class="box background boxHistoricoRepetirPedido" id="screen2-boxHistoricoRepetirPedido">
+                <span style="font-size: 4; font-weight: bold; text-decoration: underline" class="hist-info">Pedido 1 - 12/04/2017 - 19:38</span><br />
+                <span style="font-size: 4" class="hist-total">Total: 13,25€</span><br /><br />
+                <span class="hist-order">
+                    1x Caldo Verde<br />
+                    1x Cerveja Coral<br />
+                    1x Bitoque<br />
+                    1x Serradura
+                </span>
+                <div class="box btn boxRepetirPedidobtn" id="screen2-boxRepetirPedidobtn">
+                    &emsp;Repetir Pedido
+                </div>
+                <div class="box btn boxHistoricoRepetirPedidoVoltarbtn" id="screen2-boxHistoricoRepetirPedidoVoltarbtn">
+                    Voltar
+                </div>
+            </div>
+        </div>
+
+        <div id="screen2-definicoesConta">
+            <div class="title" id="screen2-definicoesTitle">
+                DEFINI&Ccedil;&Otilde;ES DE CONTA
+            </div>
+            <div class="box background" id="screen2-boxDefinicoesConta">
+                <form id="screen2-def-form">
+                    <div class="form" style="position:absolute; top:10px; left:15px;">
+
+                        <table>
+                            <!--Nome de Utilizador-->
+                            <tr>
+                                <td>
+                                    <label for="screen2-def-uname-txtbx">Nome de Utilizador:
+                                        <span id="screen2-def-uname-exists" class="attentionText">J&aacute; existe!</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="inputDef req-field" name="def-uname" id="screen2-def-uname-txtbx"><br />
+                                </td>
+                            </tr>
+
+                            <!--Password-->
+                            <tr>
+                                <td>
+                                    <label for="screen2-def-pword-txtbx">Palavra-Passe:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="password" class="inputDef" name="def-pword" id="screen2-def-pword-txtbx"><br />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label for="screen2-def-cpword-txtbx">Confirmar Palavra-Passe:
+                                        <span id="screen2-def-cpword-diff" class="attentionText">Diferente!</span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="password" class="inputDef" name="def-cpword" id="screen2-def-cpword-txtbx"><br />
+                                </td>
+                            </tr>
+
+                            <!--NIF-->
+                            <tr>
+                                <td>
+                                    <label for="screen2-def-nif-numbx">Número de Contribuinte (NIF):</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="inputDef numOnly nifNumber" name="def-nif" id="screen2-def-nif-numbx" maxlength="9"><br>
+                                </td>
+                            </tr>
+
+                            <!--Nr Telemóvel-->
+                            <tr>
+                                <td>
+                                    <label for="screen2-def-tel-numbx">Número de Telemóvel:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" class="inputDef numOnly cellNumber" name="def-tel" id="screen2-def-tel-numbx" maxlength="9"><br>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+
+                    <div class="box btn" id="screen2-boxDefinicoesVoltarbtn">
+                        Fechar
+                    </div>
+                    <div class="box btn" id="screen2-boxDefinicoesGuardarbtn">
+                        Guardar
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="window" id="moreInfo">
+      <div class="closeWindow btn Xbtn"></div>
+
+      <div class="box foodImage">  </div>
+      <div class="foodTitle">Bitoque</div>
+      <div class="classificacaoTitle"><b>Classificação:</b></div>
+      <div class="box classificacao">  </div>
+      <div class="precoTitle"><b>Preço Unitário:</b> <span>6,00€</span></div>
+      <div class="descricaoTitle">
+        <b>Descrição:</b> <span id="moreInfo-desc">Bitoque à portuguesa com ovo escalfado</span> <br>
+        <b>Ingredientes:</b> <span id="moreInfo-ingredients">Arroz, Batatas Fritas, Ovo etc...</span>
+
+      </div>
+
+    </div>
+    <div class="window" id="editIngredients">
+      <div class="box foodImage">  </div>
+      <div class="foodTitle">Bitoque</div>
+      <div class="classificacaoTitle"><b>Classificação:</b></div>
+      <div class="box classificacao">  </div>
+      <div class="precoTitle"><b>Preço Unitário:</b> <span>6,00€</span></div>
+      <div class="descricaoTitle">
+        <b>Descrição:</b> <span id="editIngredients-desc">Bitoque à portuguesa com ovo escalfado</span> <br>
+        <b>Ingredientes:</b> <span id="editIngredients-ingredients">Arroz, Batatas Fritas, Ovo etc...</span>
+      </div>
+      <div id="textChooseIngredients">
+      <b>────── Escolha os ingredientes que pretende ──────</b>
+      </div>
+        <ul>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient">Arroz</div>
+            </li>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient">Salada</div>
+            </li>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient">Batata-Frita</div>
+            </li>
+        </ul>
+
+      <div class="box btn submit" id="ingred-edit-save-btn">Guardar</div>
+      <div class="box btn submit" id="ingred-edit-cancel-btn">Cancelar</div>
+    </div>
+    <!--######################################################################
+    ############################ Terceira Janela ##############################
+    ##########################################################################-->
+    <!--Fazer Novo Pedido-->
+    <div class="box screen3" id="box-order-again">
+        <div class="title" id="order-again-title">
+            Fazer Novo Pedido
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-entradas">
+            &emsp;&emsp;&emsp;Entradas
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-sopas">
+            &emsp;&emsp;&emsp;Sopas
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-pratos">
+            &emsp;&emsp;&emsp;Pratos
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-bebidas">
+            &emsp;&emsp;&emsp;Bebidas
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-sobremesas">
+            &emsp;&emsp;&emsp;Sobremesas
+        </div>
+        <div class="box btn menu-order-again" id="menu-order-again-cafetaria">
+            &emsp;&emsp;&emsp;Cafetaria
+        </div>
+        <div class="box ordermenu screen3" id="box-order-menu">
+          <ul>
+            <li class="box btn">
+              <div class="titulo3ecran">
+                  Bitoque
+              </div>
+
+              <div class="descricao3ecran">
+                  Batata frita com arroz acompanhada com carne de porco.
+              </div>
+
+              <div class="preco3ecran">
+                  6,00€
+              </div>
+
+              <div class="box btn info3ecran">
+                  + informações
+              </div>
+            </li>
+          </u1>
+          </div>
+          <div class="box btn screen3" id="order-menu-back">VOLTAR</div>
+        </div>
+    </div>
+    <div class="box btn slideup screen3" id="order-again-btn">
+        &emsp;&emsp;Fazer Novo Pedido
+    </div>
+    <div class="box btn slideup screen3" id="order-again-hide-btn">
+    </div>
+
+    <!--Ver Pedido-->
+    <div class="screen3" id="view-order-items-box-wrapper">
+    <div class="box background screen3" id="view-order-items-box">
+        <ul>
+        </ul>
+      <div class="box btn confirmarbtn" id="view-order-confirmarbtn">
+        &nbsp;&nbsp;&nbsp;&nbsp;CONFIRMAR
+        <div class="disabler"></div>
+      </div>
+    </div>
+
+    <div class="box background screen3" id="view-all-orders-items-box">
+      <table id="view-all-orders-table">
+          <tr>
+            <td>
+              Bacalhau
+            </td>
+            <td>
+              100€
+            </td>
+          </tr>
+      </table>
+    </div>
+
+    <div class="box btn" id="view-items-current-order">
+      Pedido Atual
+    </div>
+    <div class="box btn" id="view-items-all-orders">
+      Pedidos Anteriores
+    </div>
+  </div>
+
+    <!--Ver Pedido / Total / Pagar-->
+    <div class="box screen3" id="view-order-pay-box">
+      <div class="box btn slideup" id="view-order-btn">
+          Ver Pedido
+      </div>
+      <div class="box btn slideup screen3" id="view-order-hide-btn">
+      </div>
+      <div id="view-order-pay-box-total">
+          Total:
+          <span></span>
+      </div>
+      <div class="box btn paybtn" id="pay-btn">
+          PAGAR
+          <div class="disabler"></div>
+      </div>
+    </div>
+
+    <!-- Pagamento -->
+    <div class="box screen3 window" id="order-pay-box">
+      <div class="title" id="order-pay-title">
+          Pagamento
+      </div>
+
+         Escolha uma das opções:<br>
+         A pagar: <span id="order-pay-box-amt"></span>
+      <div class="box btn" id="order-pay-money-btn">
+          Dinheiro
+      </div>
+      <div class="box btn" id="order-pay-creditcard-btn">
+          Cartão Bancário
+      </div>
+      <div class="box btn" id="order-pay-cancel-btn">
+          Cancelar
+      </div>
+      <div class="background screen3" id="transacao">
+          Pagamento em processamento
+          <img width="150px" src="loading.gif">
+          <div class="box btn" id="order-pay-cancel-transaction-btn">
+              Cancelar
+          </div>
+      </div>
+    </div>
+
+    <!-- Circulo Tempo Restante Pedido -->
+    <div class="box screen3" id="timeleft-circle">
+      Tempo previsto: <span id="foodwaittime"></span>
+    </div>
+
+    <!-- Box Tempo Restante (quando ha prato) -->
+    <div class="box screen3 timeleftbox" id="timeleft-box-1">
+      <span class="timeleft-foodname"></span>: <br><span class="timeleft-waittime"></span>
+    </div>
+    <div class="box screen3 timeleftbox" id="timeleft-box-2">
+      <span class="timeleft-foodname"></span>: <br><span class="timeleft-waittime"></span>
+    </div>
+    <div class="box screen3 timeleftbox" id="timeleft-box-3">
+      <span class="timeleft-foodname"></span>: <br><span class="timeleft-waittime"></span>
+    </div>
+    <!--Janela Login-->
+    <div class="window" id="login-window-thirdScreen">
+        <h3>ENTRAR</h3>
+        <div class="closeWindow btn Xbtn" id="login-close-btn-thirdScreen"></div>
+
+        <form id="login-form-thirdScreen">
+            <div class="form">
+
+                <table>
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="login-uname-txtbx-thirdScreen">Nome de Utilizador:<span id="login-uname-att-thirdScreen" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="req-field" name="login-uname" id="login-uname-txtbx-thirdScreen">
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="login-pword-txtbx-thirdScreen">Palavra-Passe:<span id="login-pword-att-thirdScreen" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" class="req-field" name="login-pword" id="login-pword-txtbx-thirdScreen"><br></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <a style="text-align: right" href="#" id="forgot-password-btn-thirdScreen">Esqueceu palavra-passe/nome de utilizador.</a>
+                            <br />
+                            <br />
+                            <span class="attentionText att-warning">* Campos de preenchimento obrigat&oacute;rio.</span>
+                        </td>
+                    </tr>
+                </table>
+                <p id="invalid-data-thirdScreen">Palavra-passe ou Nome de Utilizador inv&aacute;lidos</p>
+
+            </div>
+
+            <div class="box btn submit" id="login-submit-thirdScreen">
+                ENTRAR
+                <div class="disabler" id="login-submit-disabler-thirdScreen"></div>
+            </div>
+        </form>
+    </div>
+
+    <!--Janela Registar-->
+    <div class="window" id="reg-window-thirdScreen">
+        <h3>REGISTAR</h3>
+        <div class="closeWindow btn Xbtn" id="reg-close-btn-thirdScreen"></div>
+
+        <form id="reg-form-thirdScreen">
+            <div class="form" style="position:absolute; top:110px;">
+
+                <table>
+                    <!--Nome de Utilizador-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-uname-txtbx-thirdScreen">Nome de Utilizador:<span id="reg-uname-att-thirdScreen" class="attentionText">*</span>
+                                <span id="reg-uname-exists-thirdScreen" class="attentionText">O nome de utilizador escolhido j&aacute; existe.</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text"  class="inputReg req-field" name="reg-uname" id="reg-uname-txtbx-thirdScreen"><br>
+                        </td>
+                    </tr>
+                    <!--Password-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-pword-txtbx-thirdScreen">Palavra-Passe:<span id="reg-pword-att-thirdScreen" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password"  class="req-field" name="reg-pword" id="reg-pword-txtbx-thirdScreen"><br />
+                        </td>
+                    </tr>
+                    <!--Confirmar Password-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-cpword-txtbx-thirdScreen">Confirmar Palavra-Passe:<span id="reg-cpword-att-thirdScreen" class="attentionText">*</span>
+                                <span id="reg-cpword-diff-thirdScreen" class="attentionText">A palavra-passe inserida &eacute; diferente &agrave; anterior.</span>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password"  class="req-field" name="reg-cpword" id="reg-cpword-txtbx-thirdScreen"><br />
+                        </td>
+                    </tr>
+                    <!--NIF-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-nif-numbx-thirdScreen">N&uacute;mero de Contribuinte (NIF):</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="numOnly nifNumber" name="reg-nif" id="reg-nif-numbx-thirdScreen" maxlength="9"><br>
+                        </td>
+                    </tr>
+                    <!--Nr Telemóvel-->
+                    <tr>
+                        <td>
+                            <br />
+                            <label for="reg-tel-numbx-thirdScreen">N&uacute;mero de Telem&oacute;vel:<span id="reg-tel-att-thirdScreen" class="attentionText">*</span></label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" class="req-field numOnly cellNumber" name="reg-tel" id="reg-tel-numbx-thirdScreen" maxlength="9"><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="attentionText att-warning">* Campos de preenchimento obrigat&oacute;rio.</span>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <div class="box btn submit" id="reg-submit-thirdScreen">
+                CONFIRMAR
+                <div class="disabler" id="reg-submit-disabler-thirdScreen"></div>
+            </div>
+        </form>
+
+    </div>
+    <!--Mais informações 3º ecran-->
+    <div class="window" id="moreInfo-thirdScreen">
+      <div class="closeWindow btn Xbtn"></div>
+
+      <div class="box foodImage food-image-thirdScreen">  </div>
+      <div class="foodTitle food-tittle-thirdScreen">Bitoque</div>
+      <div class="box classificacao classificacao-thirdScreen">  </div>
+      <div class="precoTitle preco-thirdScreen"><span>6,00€</span></div>
+      <div class="descricaoTitle descricao-thirdScreen">
+        <b>Descrição:</b> <span id="moreInfo-desc-thirdScreen">Bitoque à portuguesa com ovo escalfado</span> <br>
+        <b>Ingredientes:</b> <span id="moreInfo-ingredients-thirdScreen">Arroz, Batatas Fritas, Ovo etc...</span>
+
+      </div>
+
+    </div>
+    <!--Ingredientes 3ºecran-->
+    <div class="window" id="ingredients-thirdScreen">
+      <div class="box foodImage food-image-thirdScreen">  </div>
+      <div class="foodTitle food-tittle-thirdScreen">Bitoque</div>
+      <div id="chooseIngredientsTittle"><b>Escolha os ingredientes que pretende</b></div>
+      <div id="chooseIngredients">
+        <ul>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient-thirdScreen">Arroz</div>
+            </li>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient-thirdScreen">Salada</div>
+            </li>
+            <li>
+                 <input type="checkbox" value="None" name="check" checked />
+                 <div id="textIngredient-thirdScreen">Batata-Frita</div>
+            </li>
+        </ul>
+      </div>
+      <div class="box btn submit" id="ingred-edit-save-btn-thirdScreen">Guardar</div>
+      <div class="box btn submit" id="ingred-edit-cancel-btn-thirdScreen" >Cancelar</div>
+    </div>
+    <!--######################################################################
+    ################################ Comuns ##################################
+    ##########################################################################-->
+    <div class="box btn" id="helpbtn">?</div>
+    <div class="box btn" id="keyboard"></div>
+    <div class="box btn" id="number-pad"></div>
+
+    <div class="box" id="box-music-vote-next">
+      <div class="title" id="box-music-vote-next-title">
+            Votar Na Próxima Música
+      </div>
+      <ul>
+        <li class="box btn">
+          <div class="background-li-box-music"></div>
+          <div class="musictitle">
+            Johnny B. Goode
+          </div>
+
+          <div class="musicartist">
+              Chuck Berry
+          </div>
+          <div class="votessong">3 votos</div>
+          <div class= "box musiccover">
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="box btn slideup" id="music-vote-next-hide">
+    </div>
+
+    <!--######################################################################
+    ################################ Games ##################################
+    ##########################################################################-->
+    <div class="window gamewindow" id="tic-tac-toe-game">
+      <div class="gamewindow" id="tic-tac-toe-game-div">
+          <div class="tic-tac-toe-score" id="tic-tac-toe-computer-score"><span>0</span></div>
+          <div class="tic-tac-toe-score" id="tic-tac-toe-user-score"><span>0</span></div>
+          <div class="hitbox btn" id="hitbox-00"></div>
+          <div class="hitbox btn" id="hitbox-01"></div>
+          <div class="hitbox btn" id="hitbox-02"></div>
+          <div class="hitbox btn" id="hitbox-10"></div>
+          <div class="hitbox btn" id="hitbox-11"></div>
+          <div class="hitbox btn" id="hitbox-12"></div>
+          <div class="hitbox btn" id="hitbox-20"></div>
+          <div class="hitbox btn" id="hitbox-21"></div>
+          <div class="hitbox btn" id="hitbox-22"></div>
+          <div class="reset btn" id="tic-tac-toe-reset-btn">Reset</div>
+          <div class="retaHorizontal" id="reta-horizontal"></div>
+          <div class="retaVertical" id="reta-vertical"></div>
+          <div class="retaDiagonalPositivo" id="reta-diagonal-positivo"></div>
+          <div class="retaDiagonalNegativo" id="reta-diagonal-negativo"></div>
+          <div class="gamewindow blockerWhite">
+            <div class ="btn rematch-btn" id="tic-tac-toe-rematch-btn"> Jogar novamente</div>
+            <div class ="btn play-btn" id="tic-tac-toe-play-btn"> Jogar</div>
+            <div class="blockerWhiteText">Sê o primeiro a fazer 3 marcas em linha, coluna ou diagonal</div>
+          </div>
+          <div class="closeWindow btn Xbtn" id="tic-tac-toe-close-btn"></div>
+      </div>
+    </div>
+
+    <div class="window gamewindow" id="esmurristo-game">
+      <div class="gamewindow" id="esmurristo-game-div">
+        <div class="esmurristo-score esmurristo-user" id="esmurristo-player1-score">Você <br><span>0</span></div>
+        <div class="esmurristo-score esmurristo-others" id="esmurristo-player2-score">Jogador 2 <br><span>0</span></div>
+        <div class="esmurristo-score esmurristo-others" id="esmurristo-player3-score">Jogador 3 <br><span>0</span></div>
+        <div class="esmurristo-score esmurristo-others" id="esmurristo-player4-score">Jogador 4 <br><span>0</span></div>
+        <div class="esmurristo-score" id="esmurristo-count-score">Contagem <br> <span>0</span></div>
+        <div class="btn" id="esmurristo-btn"></div>
+        <div id="esmurristo-time-left">Tempo Restante: <span id="esmurristo-time-left-time">5</span> segundo<span id="esmurristo-time-left-s">s</span></div>
+        <!--<div class="reset btn" id="esmurristo-reset-btn">Reset</div>-->
+        <div class="gamewindow blockerWhite">
+          <div class ="btn rematch-btn" id="esmurristo-rematch-btn"> Jogar novamente</div>
+          <div class ="btn play-btn" id="esmurristo-play-btn"> Jogar</div>
+          <div class="blockerWhiteText">Joga contra o tempo, clica o maior número de vezes em 5 segundos</div>
+        </div>
+        <div class="closeWindow btn Xbtn" id="esmurristo-close-btn"></div>
+      </div>
+    </div>
 
     <div class="window gamewindow" id="pong-game">
       <div class="gamewindow" id="pong-game-div">
@@ -88,7 +1206,7 @@
           <div class="gamewindow blockerWhite">
             <div class ="btn rematch-btn" id="pong-rematch-btn"> Jogar novamente</div>
             <div class ="btn play-btn" id="pong-play-btn"> Jogar</div>
-            <div class="blockerWhiteText">Faz passar a bola pelo advers�rio e ganhar o jogo</div>
+            <div class="blockerWhiteText">Faz passar a bola pelo adversário e ganhar o jogo</div>
           </div>
           <div class="closeWindow btn Xbtn" id="pong-close-btn"></div>
       </div>
@@ -96,3 +1214,4 @@
 
 </body>
 </html>
+
