@@ -19,7 +19,7 @@ function preparePongGame() {
         pong_resetGame();
         $("#user-player").css("z-index", "0");
 
-        $("#pong-game .blockerWhiteText").text("Faça passar a bola pelo adversário! O primeiro a ter 5 pontos ganha.");
+        $("#pong-game .blockerWhiteText").text("FaÃ§a passar a bola pelo adversÃ¡rio! O primeiro a ter 5 pontos ganha.");
         $("#pong-game .blockerWhite").show();
         $("#pong-play-btn").show();
         $("#pong-rematch-btn").hide();
@@ -190,9 +190,9 @@ function pong_lost() {
     if (pong_userScore >= 5 || pong_computerScore >= 5) {
         pong_stopBall();
         if (pong_userScore > pong_computerScore)
-            $("#pong-game .blockerWhiteText").text("Você ganhou! :)");
+            $("#pong-game .blockerWhiteText").text("VocÃª ganhou! :)");
         else
-            $("#pong-game .blockerWhiteText").text("Você perdeu! :(");
+            $("#pong-game .blockerWhiteText").text("VocÃª perdeu! :(");
         $("#pong-rematch-btn").show();
         $("#pong-game .blockerWhite").show();
     }
