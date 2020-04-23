@@ -1,25 +1,27 @@
 
 
+let camera, scene, renderer;
+let cameraControls;
+let clock = new THREE.Clock();
 
+    //* Initialize webGL with camera and lights
+     const canvas1 = document.getElementById("mycanvas");
 
-//* Initialize webGL with camera and lights
-const canvas1 = document.getElementById("mycanvas");
+     const renderer1 = new THREE.WebGLRenderer({ canvas: canvas1 });
 
-const renderer1 = new THREE.WebGLRenderer({ canvas: canvas1 });
-
-renderer1.setClearColor('rgb(255,255,255)');
+     renderer1.setClearColor('rgb(255,255,255)');
 // create scene and camera
-const scene = new THREE.Scene();
-const camera1 = new THREE.PerspectiveCamera(90, canvas1.width / canvas1.height,
+     const scene = new THREE.Scene();
+     const camera1 = new THREE.PerspectiveCamera(90, canvas1.width / canvas1.height,
     0.1, 1000);
-camera1.position.z = 10;
-camera1.position.y = 10;
+     camera1.position.z = 10;
+     camera1.position.y = 10;
 
-const ambientLight = new THREE.AmbientLight(0x909090);
-scene.add(ambientLight);
-const light = new THREE.DirectionalLight(0x444444);
-light.position.set(1.5, 1, 1);
-scene.add(light);
+     const ambientLight = new THREE.AmbientLight(0x909090);
+     scene.add(ambientLight);
+     const light = new THREE.DirectionalLight(0x444444);
+     light.position.set(1.5, 1, 1);
+     scene.add(light);
 
 const variables = {
     planeWidth: 6,
