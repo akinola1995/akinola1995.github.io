@@ -307,8 +307,8 @@ function stopCube () {
 
 // Game Reset
 function reset () {
-  console.log ("reset");
-  cubo.position.set (0,10,0);
+  console.log("reset");
+  cube.position.set(0,10,0);
   cube. $velocity = null;
   player1.position.x = 0;
   player2.position.x = 0;
@@ -325,9 +325,9 @@ function getMotionCube () {
 
 // Update the cube position
 function updateCubePosition() {
-  var cuboPos = cubo.position;
+  var cubePos = cube.position;
   cubePos.x + = cube. $velocity.x;
-  cuboPos.z + = cube. $velocity.z;
+  cubePos.z + = cube. $velocity.z;
 
 }
 
