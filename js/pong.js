@@ -1,4 +1,4 @@
-
+// Final project
 
 //* Initialize 
 const canvas = document.getElementById("mycanvas");
