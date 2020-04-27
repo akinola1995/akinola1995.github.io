@@ -1,53 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+<head>
+    <title>Game</title>
+    <style>
+        body {
+            background-color: black;
+        }
 
-  <head>
-    <title>Jogo</title>
-  </head>
+        #gameCanvas {
+            background-color: black;
+            width: 640px;
+            height: 360px;
+            margin: auto;
+        }
 
-  <body>
-    <h3 id="scoreBoard"></h3>
-    <div id="container"></div>
-    <script src="three.min.js"></script>
-    <script src="PointerLockControls.js"></script>
-  
-    <div id="info"></div>
-    
-    <script src="new.js"></script>
-    
-  </body>
+        #scoreboard {
+            text-align: center;
+            font-family: Segoe UI, Helvetica, Ubuntu, sans-serif;
+            color: white;
+        }
 
-  <style>
-
-    #scoreBoard{
-      color:black;
-      display: inline-block;
-      text-align: center;
-      vertical-align: center;
-      position: absolute;
-      margin-top: 20%;
-      margin-bottom: 60%;
-      margin-left: 40%;
-      margin-right: 35%;
-      color: grey;
-      font-size: 200%;
-      font-weight: bold;
+        #scores {
+            font-size: 600%;
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="gameCanvas"></div>
+<script src="js/three.min.js"></script>
+<script src="js/keyboard.js"></script>
+<script src="js/game.js"></script>
+<div id="scoreboard">
+    <h1 id="scores"><span id="player1Score">0</span>-<span id="player2Score">0</span></h1>
+    <h2 id="winnerBoard"></h2>
+    <h3>A - left<br>D - right</h3>
+</div>
+<script>
+    window.onload = function () {
+        Pong.setup("gameCanvas", "player1Score", "player2Score");
     }
-      body{
-          width: 100%;
-          height: 100%;
-          overflow-x: hidden;
-          overflow-y: hidden;
-          margin: 0;
-          padding: 0;
-      }
-      #info {
-        position: absolute;
-        top: 10px;
-        width: 100%;
-        text-align: center;
-        z-index: 100;
-        display:block;
-      }
-  </style>
+</script>
+</body>
 </html>
