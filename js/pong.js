@@ -1,16 +1,16 @@
 
 
 /*
-  Práctica Final GyV3D - PONG X Mario Carretero Berrocal
-  Se ha implementado la funcionalidad básica y extras:
-    - Se han añadido más objetos a la escena:
+  PrÃ¡ctica Final GyV3D - PONG X Mario Carretero Berrocal
+  Se ha implementado la funcionalidad bÃ¡sica y extras:
+    - Se han aÃ±adido mÃ¡s objetos a la escena:
         4 cilindros, 4 esferas y 1 plano
-    - Se han añadido sombras producidas por una SpotLight
-    - Se han añadido texturas a todos los objetos excepto a las palas
-    - La cámara sigue el movimiento de la pala del jugador
-    - Se han añadido sonidos al contacto de la pelota con las palas
-    - Se han añadido sonidos al marcarse tantos en ambos lados del juego
-    - Se ha añadido sonido al terminar la partida, previo activación del volumen
+    - Se han aÃ±adido sombras producidas por una SpotLight
+    - Se han aÃ±adido texturas a todos los objetos excepto a las palas
+    - La cÃ¡mara sigue el movimiento de la pala del jugador
+    - Se han aÃ±adido sonidos al contacto de la pelota con las palas
+    - Se han aÃ±adido sonidos al marcarse tantos en ambos lados del juego
+    - Se ha aÃ±adido sonido al terminar la partida, previo activaciÃ³n del volumen
       en los controles que aparecen.
 */
 // GLOBAL VARIABLES
