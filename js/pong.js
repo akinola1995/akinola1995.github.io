@@ -1,4 +1,4 @@
-﻿"use strict"
+
 
 //* Initialize webGL with camera and lights
 const canvas = document.getElementById("mycanvas");
@@ -144,7 +144,7 @@ const racketPlayer2 = new THREE.Mesh(racketGeometry, racketP2Material);
 racketPlayer2.position.z = radius;
 racketPlayer2.position.y = fieldH / 2;
 
-//CONSTANTS AND ANIMATION VARIABLES
+//Animation and variables
 const maxSpeedX = 5;
 const minSpeedX = 3;
 const maxSpeedY = 10;
@@ -189,7 +189,7 @@ document.addEventListener("keydown", (event) => {
     }
 });
 
-//ADD SCENE OBJECTS
+//ADD SCENE PARA
 scene.add(field);
 scene.add(cushionRight);
 scene.add(cushionLeft);
