@@ -1,7 +1,7 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
-	<head>
-		<title>EXTRAS_PONG GyV3D 2017-2018</title>
+  <head>
+		<title>Game</title>
 		<style>
 			body {
 				background-color: black;
@@ -19,8 +19,8 @@
 				color: white;
 			}
 			#scores {
-				font-size:600%;
-				padding:0;
+				font-size:600%; 
+				padding:0; 
 				margin:0;
 				color: white;
 			}
@@ -32,20 +32,15 @@
 	</head>
 	<body onload='setup();'>
 		<div id='gameCanvas'></div>
-		<script src='js/three.min.js'></script>
-		<script src='js/keyboard.js'></script>
-		<script src='js/pong.js'></script>
+		<script src='./js/three.min.js'></script>
+		<script src='./js/keyboard.js'></script>
+		<script src='./js/game.js'></script>
 		<div id='scoreboard'>
 			<h1 id='scores'>0-0</h1>
-			<h1 id='title'>GyV3D PONG</h1>
-			<h2 id='winnerBoard'>First to 3 wins!</h2>
+			<h1 id='title'>3D PONG</h1>
+			<h2 id='winnerBoard'>First to 7 wins!</h2>
 			<h3>A - move left
-			<br>D - move right<br>
-			<br>If you want party after the game, turn up the volume down here!</h3>
-			<audio controls id="end" muted>
-	  		<source src="./js/sounds/Sleep.mp3" type="audio/mpeg">
-					Your browser does not support the audio element.
-			</audio>
+			<br>D - move right</h3>
 		</div>
 	</body>
 </html>
