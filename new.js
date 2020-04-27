@@ -12,7 +12,7 @@ var UNITWIDTH = 90,
     near = 1,
     far = 2000,
     PLAYERSPEED = 200, // How fast the player moves
-    directionBlock = 0,
+    blockDirection = 0,
     collidableObjects = [],
     PLAYERCOLLISIONDISTANCE = 20,
     Field_Width = 500,
@@ -26,48 +26,48 @@ var UNITWIDTH = 90,
 var moveLeft = false;
 var moveRight = false;
 
-scoreBoard = document.getElementById ('scoreBoard');
+scoreBoard = document.getElementById('scoreBoard');
 
 
 var camera, scene, renderer, background, right, left, player1, player2, cube, clock, delta, controls;
-var blockSpeed  = new THREE.Vector3 (0,0,0);
+var blockSpeed  = new THREE.Vector3(0,0,0);
 
 // Game setup
-init ();
+init();
 animate();
 
 
 function init () {
-  clock = new THREE.Clock ();
+  clock = new THREE.Clock();
   // Create the scene
-  scene = new THREE.Scene ();
+  scene = new THREE.Scene();
 
   // Set render
   renderer = new THREE.WebGLRenderer ();
-  renderer.setClearColor (backgroundColor);
-  renderer.setPixelRatio (window.devicePixelRatio);
-  renderer.setSize (window.innerWidth, window.innerHeight);
+  renderer.setClearColor(backgroundColor);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(window.innerWidth, window.innerHeight);
 
   // Render to the container
   var container = document.getElementById ('container');
-  container.appendChild (renderer.domElement);
+  container.appendChild(renderer.domElement);
 
   // Define the position of the camera
-  camera = new THREE.PerspectiveCamera (40, window.innerWidth / window.innerHeight, 1, 10000);
+  camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 10000);
   camera.position.z = 800;
   camera.position.y = 100;
 
   // point camera on scene
-  camera.lookAt (blockSpeed);
+  camera.lookAt(blockSpeed);
 
-  scene.add (camera);
+  scene.add(camera);
 
-  controls = new THREE.PointerLockControls (camera);
-  scene.add (controls.getObject());
+  controls = new THREE.PointerLockControls(camera);
+  scene.add(controls.getObject());
 
   // Add the walls (cubes) of the maze
   createBackground();
-  rearwall();
+  rearWall();
   createWalls();
   sliders();
   Cube();
@@ -81,36 +81,36 @@ function init () {
   Block2();
 
   // Listen for if the window changes sizes and adjust
-  window.addEventListener ('resize', onWindowResize, false);
+  window.addEventListener('resize', onWindowResize, false);
 
 }
 
 // computer movement (player)
 function computer_player() {
-if (player1.position.x - 100> cube.position.x) {
-   player1.position.x - = Math.min (player1.position.x - cubo.position.x, 4);
+if(player1.position.x - 100> cube.position.x) {
+   player1.position.x - = Math.min(player1.position.x - cubo.position.x, 4);
  } else if (player1.position.x - 100 <cube.position.x) {
-   player1.position.x + = Math.min (cube.position.x - player1.position.x, 4);
+   player1.position.x + = Math.min(cube.position.x - player1.position.x, 4);
  }
- if (player1.position.x == player1.position.x) {
+ if(player1.position.x == player1.position.x) {
   player1.position.x + = 5;
  }
 }
 
 // Add lights to the scene
 function lights() {
-  var light = new THREE.DirectionalLight (0xffffff, 1.2);
-  light.position.set (1, 2, 1);
+  var light = new THREE.DirectionalLight(0xffffff, 1.2);
+  light.position.set(1, 2, 1);
   scene.add(light);
 
 }
 
 // Create the game background
 function createBackground() {
-    var backgroundGeometry = new THREE.BoxGeometry (Width_field, 1, Length_field),
-        backgroundMaterial = new THREE.MeshPhongMaterial ({color: groundColor}),
-        background = new THREE.Mesh (backgroundGeometry, backgroundMaterial);
-    background.position.set (0,0,0);
+    var backgroundGeometry = new THREE.BoxGeometry(Width_field, 1, Length_field),
+        backgroundMaterial = new THREE.MeshPhongMaterial({color: groundColor}),
+        background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
+    background.position.set(0,0,0);
     scene.add(background);
 }
 
@@ -119,19 +119,19 @@ function createBackground() {
 
 
 function backwall() {
-    var backgroundGeometry = new THREE.BoxGeometry (Width_field + 40, 250, 1),
-        backgroundMaterial = new THREE.MeshPhongMaterial ({color: groundColor}),
-        background = new THREE.Mesh (backgroundGeometry, backgroundMaterial);
+    var backgroundGeometry = new THREE.BoxGeometry(Width_field + 40, 250, 1),
+        backgroundMaterial = new THREE.MeshPhongMaterial({color: groundColor}),
+        background = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
     background.position.set(-5,140, ​​-Length_field / 2);
     scene.add(background);
    
 }
 
-function createWalls () {
-    var backgroundGeometry = new THREE.BoxGeometry (20, 20, Length_field),
-        backgroundMaterial = new THREE.MeshPhongMaterial ({color: groundColor}),
-        left = new THREE.Mesh (backgroundGeometry, backgroundMaterial),
-        right = new THREE.Mesh (backgroundGeometry, backgroundMaterial);
+function createWalls() {
+    var backgroundGeometry = new THREE.BoxGeometry(20, 20, Length_field),
+        backgroundMaterial = new THREE.MeshPhongMaterial({color: groundColor}),
+        left = new THREE.Mesh(backgroundGeometry, backgroundMaterial),
+        right = new THREE.Mesh(backgroundGeometry, backgroundMaterial);
     left.position.set(-Width_field / 2-10,10,0);
     right.position.set(Field_ Width / 2 + 10,10,0);
     scene.add(right);
@@ -140,9 +140,9 @@ function createWalls () {
 
 function sliders() {
     var playersGeometry = new THREE.BoxGeometry (100, 20, 10),
-    playersMaterial = new THREE.MeshPhongMaterial ({color: 0x15ea9c});
-    player1 = new THREE.Mesh (playersGeometry, playersMaterial);
-    player2 = new THREE.Mesh (playersGeometry, new THREE.MeshPhongMaterial ({color: 0xeaa615}));
+    playersMaterial = new THREE.MeshPhongMaterial({color: 0x15ea9c});
+    player1 = new THREE.Mesh(playersGeometry, playersMaterial);
+    player2 = new THREE.Mesh(playersGeometry, new THREE.MeshPhongMaterial ({color: 0xeaa615}));
     player1.position.set(0.10, -Length_field / 2 + 20);
     player2.position.set(0.10, Length_field / 2 - 20);
     scene.add(player1);
@@ -152,11 +152,11 @@ function sliders() {
 }
 
 function Cube() {
-  var cubeGeometry = new THREE.BoxGeometry (10,10,10),
-      cubeMaterial = new THREE.MeshPhongMaterial ({color: backgroundColor});
-  cube = new THREE.Mesh (cubeGeometry, cubeMaterial);
-  cube.position.set (0,5,0);
-  scene.add (cube);
+  var cubeGeometry = new THREE.BoxGeometry(10,10,10),
+      cubeMaterial = new THREE.MeshPhongMaterial({color: backgroundColor});
+  cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  cube.position.set(0,5,0);
+  scene.add(cube);
   collidableObjects.push(cube);
 }
 
@@ -164,10 +164,10 @@ function Cube() {
 
 function Block() {
 
-  var cubeGeometry = new THREE.BoxGeometry (30, 30, 30);
-  var cubeMaterial = new THREE.MeshPhongMaterial ({color: groundColor});
-  var cu = new THREE.Mesh (cubeGeometry, cubeMaterial);
-  cu.position.set (RandomXCube(), 10, RandomYCube());
+  var cubeGeometry = new THREE.BoxGeometry(30, 30, 30);
+  var cubeMaterial = new THREE.MeshPhongMaterial({color: groundColor});
+  var cu = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  cu.position.set(RandomXCube(), 10, RandomYCube());
   cube1 = cu;
   scene.add(cube1);
  
@@ -176,12 +176,12 @@ function Block() {
 
 function Block2() {
 
-  var cubeGeometry = new THREE.BoxGeometry (30, 30, 30);
-  var cubeMaterial = new THREE.MeshPhongMaterial ({color: groundColor});
-  var cu = new THREE.Mesh (cubeGeometry, cubeMaterial);
-  cu.position.set (RandomXCube(), 10, RandomYCube());
+  var cubeGeometry = new THREE.BoxGeometry(30, 30, 30);
+  var cubeMaterial = new THREE.MeshPhongMaterial({color: groundColor});
+  var cu = new THREE.Mesh(cubeGeometry, cubeMaterial);
+  cu.position.set(RandomXCube(), 10, RandomYCube());
   cube2 = cu;
-  scene.add (cube2);
+  scene.add(cube2);
  
 }
 
@@ -199,7 +199,7 @@ function listenPressedKeys() {
   // Key pressed
 
   varPressedKeys = function(event) {
-    switch (event.which) {
+    switch(event.which) {
       case 37: Left();
         break;
       case 39: Right();
@@ -211,8 +211,8 @@ function listenPressedKeys() {
   };
 
   // Back key
-  var Backkey = function (event) {
-  switch (event.which) {
+  var Backkey = function(event) {
+  switch(event.which) {
     case 37:
     player2.position.x - = 20;
       break;
@@ -223,8 +223,8 @@ function listenPressedKeys() {
 };
 
 // Add event listeners for when movement keys are pressed and released
-document.addEventListener ('keydown', backkey, false);
-document.addEventListener ('keyup', Pressedkey, false);
+document.addEventListener('keydown', backkey, false);
+document.addEventListener('keyup', Pressedkey, false);
 }
 
 function Right() {
@@ -291,22 +291,22 @@ function onWindowResize() {
 }
 
 // Animate the game
-function animate () {
-  render ();
+function animate() {
+  render();
   // Keep updating the renderer
   requestAnimationFrame (animate);
-  controlCube ();
-  computer_player ();
+  controlCube();
+  computer_player();
 
 }
 
 // Stop cube
-function stopCube () {
+function stopCube() {
   cube. $stoped = true;
 }
 
 // Game Reset
-function reset () {
+function reset() {
   console.log("reset");
   cube.position.set(0,10,0);
   cube. $velocity = null;
@@ -315,8 +315,8 @@ function reset () {
 }
 
 // Start cube movement
-function getMotionCube () {
-  direction var = Math.random ()> 0.5? -1: 1;
+function getMotionCube() {
+  direction var = Math.random()> 0.5? -1: 1;
   cube. $ velocity = {
     x: 0,
     z: direction * 20
