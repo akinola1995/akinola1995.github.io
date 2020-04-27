@@ -66,7 +66,7 @@ function init () {
   scene.add (controls.getObject());
 
   // Add the walls (cubes) of the maze
-  createbackground();
+  createBackground();
   rearwall();
   createWalls();
   sliders();
@@ -106,7 +106,7 @@ function lights() {
 }
 
 // Create the game background
-function createbackground() {
+function createBackground() {
     var backgroundGeometry = new THREE.BoxGeometry (Width_field, 1, Length_field),
         backgroundMaterial = new THREE.MeshPhongMaterial ({color: groundColor}),
         background = new THREE.Mesh (backgroundGeometry, backgroundMaterial);
