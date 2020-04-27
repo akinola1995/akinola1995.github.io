@@ -1,9 +1,9 @@
 /**
- * Copyright (c) 2019 
- * Bruno Novo & João Valente
+ * Pong game project
+ * 
  */
 
-// Tamanho dos cubos para o jogo
+// parameters for pong game
 var UNITWIDTH = 90,
     UNITHEIGHT = 45,
     backgroundColor = 0xe0e0e0,
@@ -52,7 +52,7 @@ function init() {
   var container = document.getElementById('container');
   container.appendChild(renderer.domElement);
 
-  // Definir a posiçao da camara
+  // Definir a posiÃ§ao da camara
   camara = new THREE.PerspectiveCamera( 40, window.innerWidth / window.innerHeight, 1, 10000 );
   camara.position.z = 800;
   camara.position.y = 100;
@@ -313,7 +313,7 @@ function reset() {
   player2.position.x=0;
 }
 
-// Começao movimento do cubo 
+// ComeÃ§ao movimento do cubo 
 function comecarMovimentoCubo() {
   var direcao = Math.random() > 0.5 ? -1 : 1;
   cubo.$velocity = {
@@ -322,7 +322,7 @@ function comecarMovimentoCubo() {
   };
 }
 
-//Atualizar a posição do cubo
+//Atualizar a posiÃ§Ã£o do cubo
 function atualizarPosicaoCubo() {
   var cuboPos = cubo.position;
   cuboPos.x += cubo.$velocity.x;
