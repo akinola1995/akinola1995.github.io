@@ -1,6 +1,6 @@
 
 
-//* Initialize webGL with camera and lights
+//* Initialize 
 const canvas = document.getElementById("mycanvas");
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas
