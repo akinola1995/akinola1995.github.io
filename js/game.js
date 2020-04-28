@@ -55,7 +55,7 @@ function createScene()
 {
         // set the scene size
         var WIDTH = 640,
-          HEIGHT = 350;
+          HEIGHT = 360;
 
         // set some camera attributes
         var VIEW_ANGLE = 50,
