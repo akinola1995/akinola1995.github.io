@@ -1,6 +1,6 @@
 ﻿
 // Pong Table variables
-var fieldWidth = 600, fieldHeight = 250;
+var fieldWidth = 380, fieldHeight = 180;
 
 // paddle variables
 var paddleWidth, paddleHeight, paddleDepth, paddleQuality;
@@ -54,8 +54,8 @@ function pause(pause_state) {
 function createScene()
 {
         // set the scene size
-        var WIDTH = 740,
-          HEIGHT = 400;
+        var WIDTH = 640,
+          HEIGHT = 350;
 
         // set some camera attributes
         var VIEW_ANGLE = 50,
