@@ -143,7 +143,7 @@ function createScene()
         var plane = new THREE.Mesh(
 
           new THREE.PlaneGeometry(
-                planeWidth * 0.95,        // 95% of table width, since we want to show where the ball goes out-of-bounds
+                planeWidth * 0.95,        // 95% of table width
                 planeHeight,
                 planeQuality,
                 planeQuality),
@@ -158,7 +158,7 @@ function createScene()
           new THREE.CubeGeometry(
                 planeWidth * 1.05,        
                 planeHeight * 1.03,
-                100,                                // an arbitrary depth, the camera can't see much of it anyway
+                100,                                
                 planeQuality,
                 planeQuality,
                 1),
@@ -171,7 +171,7 @@ function createScene()
         var skyPlane = new THREE.Mesh(
 
           new THREE.PlaneGeometry(
-                planeWidth,        // 95% of table width, since we want to show where the ball goes out-of-bounds
+                planeWidth,        
                 planeHeight,
                 planeQuality,
                 planeQuality),
