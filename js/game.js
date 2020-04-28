@@ -1,6 +1,6 @@
 ﻿
-// field variables
-var fieldWidth = 400, fieldHeight = 200;
+// Pong Table variables
+var fieldWidth = 600, fieldHeight = 250;
 
 // paddle variables
 var paddleWidth, paddleHeight, paddleDepth, paddleQuality;
@@ -10,7 +10,7 @@ var paddle1DirY = 0, paddle2DirY = 0, paddleSpeed = 3;
 var ball, paddle1, paddle2;
 var ballDirX = 1, ballDirY = 1, ballSpeed = 2;
 
-// game-related variables
+// game variables
 var score1 = 0, score2 = 0;
 // you can change this to any positive whole number
 var maxScore = 7;
@@ -18,12 +18,11 @@ var maxScore = 7;
 // set opponent reflexes (0 - easiest, 1 - hardest)
 var difficulty = 0.2;
 
-// initialize pause boolean, to be altered based on space bar press
+// initialize pause boolean, to be used by pressing space bar
 var paused = false;
 
-// ------------------------------------- //
-// ------- GAME FUNCTIONS -------------- //
-// ------------------------------------- //
+
+// Pong game functions
 
 function setup()
 {
@@ -34,10 +33,10 @@ function setup()
         score1 = 0;
         score2 = 0;
         
-        // set up all the 3D objects in the scene        
+        // set scene        
         createScene();
         
-        // and let's get cracking!
+        
         draw();
 }
 
@@ -55,8 +54,8 @@ function pause(pause_state) {
 function createScene()
 {
         // set the scene size
-        var WIDTH = 640,
-          HEIGHT = 360;
+        var WIDTH = 740,
+          HEIGHT = 400;
 
         // set some camera attributes
         var VIEW_ANGLE = 50,
@@ -78,11 +77,11 @@ function createScene()
 
         scene = new THREE.Scene();
 
-        // add the camera to the scene
+        // add camera to scene
         scene.add(camera);
         
         // set a default position for the camera
-        // not doing this somehow messes up shadow rendering
+      
         camera.position.z = 320;
         
         // start the renderer
@@ -183,12 +182,12 @@ function createScene()
         skyPlane.receiveShadow = false;  
                 
         // set up the sphere vars
-        // lower 'segment' and 'ring' values will increase performance
+       
         var radius = 5,
                 segments = 6,
                 rings = 6;
                 
-        // // create the sphere's material
+        //  create the sphere material
         var sphereMaterial =
           new THREE.MeshLambertMaterial(
                 {
